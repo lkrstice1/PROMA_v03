@@ -1,10 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function App() {
+  const [natpis, postaviNatpis] = useState("Programiranje mobilnih aplikacija")
+  const klik = () => {
+    postaviNatpis('Novi natpis');
+  }
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>{natpis}</Text>
+      <Button title='Promjena' onPress={klik} />
       <StatusBar style="auto" />
     </View>
   );
